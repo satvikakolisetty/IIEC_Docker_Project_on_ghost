@@ -4,7 +4,7 @@ services:
   dbos:
     image : mysql:5.7
     volumes: 
-      - mysql_storage_new:/var/lib/mysql
+      - mysql_storage:/var/lib/mysql
     restart: always
     environment:
        MYSQL_ROOT_PASSWORD: rootpass
@@ -26,8 +26,8 @@ services:
       database__connection__password: redhat
       database__connection__database: mydb
     volumes:
-      - gh_storage_new:/contest/adapter/storage
+      - gh_storage:/contest/adapter/storage
 
 volumes:
-    gh_storage_new:
-    mysql_storage_new:
+    gh_storage:
+    mysql_storage:
